@@ -57,3 +57,15 @@ export KUBECONFIG=$HOME/admin.conf
 echo "========================================================================================"  >> $LOGFILE 
 echo "kubectl get nodes" >> $LOGFILE 
 kubectl get nodes  >> $LOGFILE 
+
+echo "========================================================================================"  >> $LOGFILE 
+echo "Create kubernetes cluster network" >> $LOGFILE 
+curl -L https://git.io/weave-kube -o /opt/weave-kube
+kubectl apply -f /opt/weave-kube
+
+echo "========================================================================================"  >> $LOGFILE 
+echo "Install kubernetes dashboard" >> $LOGFILE 
+kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+
+# kubectl run http --image=katacoda/docker-http-server:latest --replicas=1
+
