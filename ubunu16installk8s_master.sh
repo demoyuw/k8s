@@ -67,5 +67,4 @@ echo "==========================================================================
 echo "Install kubernetes dashboard" >> $LOGFILE 
 kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
 
-# kubectl run http --image=katacoda/docker-http-server:latest --replicas=1
 
