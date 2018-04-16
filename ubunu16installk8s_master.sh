@@ -40,7 +40,7 @@ cat <<EOF >/etc/cni/net.d/10-weave.conf
 }
 EOF
 
-
+sudo swapoff -a
 
 # kubernetes initialization
 echo "========================================================================================"  >> $LOGFILE 
