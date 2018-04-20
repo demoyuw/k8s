@@ -39,3 +39,6 @@ cat <<EOF >/etc/cni/net.d/10-weave.conf
     "type": "weave-net"
 }
 EOF
+
+# disable SWAP
+sudo swapoff -a
