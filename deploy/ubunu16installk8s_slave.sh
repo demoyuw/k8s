@@ -13,6 +13,7 @@ fi
 LOGFILE=$HOME/ubuntu16installk8s_slave.log
 touch $LOGFILE
 
+sed -i "s,tw.,,g" /etc/apt/sources.list >> $LOGFILE
 
 # apt-get install & upgrade
 echo "========================================================================================"  >> $LOGFILE 
