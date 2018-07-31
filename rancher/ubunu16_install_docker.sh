@@ -13,7 +13,3 @@ add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu
    stable" &>> $LOGFILE
 apt-get update &>> $LOGFILE 
 apt-get install docker-ce=17.03.2~ce-0~ubuntu-xenial -y &>> $LOGFILE
-
-mkdir $WORK_DIR/rancher &>> $LOGFILE
-chmod 755 $WORK_DIR/rancher &>> $LOGFILE
-docker run -d --restart=unless-stopped -p 80:80 -p 443:443 -v $WORK_DIR/rancher:/var/lib/rancher rancher/rancher &>> $LOGFILE
