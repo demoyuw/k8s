@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-readonly-pv
+spec:
+  storageClassName: ""
+  capacity:
+    storage: 10G
+  accessModes:
+    - ReadOnlyMany
+  gcePersistentDisk:
+    pdName: my-test-disk
+    fsType: ext4

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-nfs
+spec:
+  containers:
+  - name: nginx-pod-nfs
+    image: nginx
+    ports:
+      - name: nginx-port
+        containerPort: 80
+    volumeMounts:
+      - name: nfs-volumes
+        mountPath: /tmp
+  volumes:
+  - name: nfs-volumes
+    nfs:
+     server: 10.128.0.2
+     path: /k8sNFS

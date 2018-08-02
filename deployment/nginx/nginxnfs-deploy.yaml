@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:stable
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-nfs-client
+          mountPath: /NFS
+        env:
+          - name: PROVISIONER_NAME
+            value: fuseim.pri/ifs
+          - name: NFS_SERVER
+            value: 10.50.1.51
+          - name: NFS_PATH
+            value: /k8sNFS
+      volumes:
+      - name: nginx-nfs-client
+        nfs:
+          server: 10.50.1.51
+          path: /k8sNFS

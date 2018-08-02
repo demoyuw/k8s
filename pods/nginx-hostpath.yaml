@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apiserver
+spec:
+  containers:
+  - name: apiserver
+    image: nginx
+    volumeMounts:
+    - mountPath: /tmp
+      name: tmp-volume
+    imagePullPolicy: Always
+  volumes:
+  - name: tmp-volume
+    hostPath:
+      path: /tmp
+      type: Directory

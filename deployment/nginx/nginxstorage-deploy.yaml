@@ -19,3 +19,13 @@ spec:
         image: nginx:stable
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: nginx-storage
+          mountPath: /data/redis
+      volumes:
+      - name: nginx-storage
+        source:
+          persistentVolumeClaim:
+           accessMode: ReadWriteOnce
+           claimRef:
+             name: task-pv-claim
