@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ubuntu-pod-gcp-volume
+  name: nginx-pod-gcp-volume
 spec:
   containers:
-  - name: ubuntu-pod-gcp-volume
-    image: ubuntu:16.04
+  - name: nginx-pod-gcp-volume
+    image: nginx
     ports:
       - name: nginx-port
         containerPort: 80
@@ -16,4 +16,3 @@ spec:
   - name: gcp-volume
     persistentVolumeClaim:
       claimName: my-readonly-pvc
-      readOnly: true
