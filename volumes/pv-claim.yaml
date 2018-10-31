@@ -3,8 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: my-readonly-pvc
 spec:
+  storageClassName: ""
   accessModes:
     - ReadOnlyMany
   resources:
     requests:
-      storage: 30Gi
+      storage: 5Gi
