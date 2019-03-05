@@ -1,0 +1,59 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:5.6
+        env:
+          # Use secret in real usage
+        - name: MYSQL_ROOT_PASSWORD
+          value: password
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - name: mysql-nfs-storage
+          mountPath: /var/lib/mysql
+      - name: python
+        image: demoyuw/python-flask:v0.3-alpine
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 10009
+        volumeMounts:
+        - mountPath: /var/lib/python
+          name: python-nfs-storage
+      volumes:
+      - name: mysql-nfs-storage
+        nfs:
+         server: 10.50.1.51
+         path: /k8sNFS
+      - name: python-nfs-storage
+        nfs:
+         server: 10.50.1.51
+         path: /k8sNFS-python
+   

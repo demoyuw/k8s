@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  web:
+    container_name: nginx
+    build: ./dockerfile/nginx/.
+    volumes:
+      - ./dockerfile/nginx/web:/usr/share/nginx/html
+    ports:
+    - "80:80"
+    - "443:443"
+  db:
+    container_name: postgresql
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./pg-data:/var/lib/postgresql/data
+  app:
+    container_name: flask
+    build: ./dockerfile/flask-api/.
+    ports:
+      - "10009:10009"
+    depends_on:
+      - db
