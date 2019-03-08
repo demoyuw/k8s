@@ -12,7 +12,6 @@ spec:
     - name: http
       protocol: TCP
       port: 80
-      targetPort: 80
-#      nodePort: 30060
+      nodePort: 30060
 #  externalIPs:
 #  - 10.50.1.60
