@@ -19,9 +19,9 @@ spec:
         image: nginx:stable
         ports:
         - containerPort: 80
-      volumeMounts:
-      - mountPath: /mnt
-        name: cache-volume
-    volumes:
-    - name: cache-volume
-      emptyDir: {}
+        volumeMounts:
+        - mountPath: /mnt
+          name: cache-volume
+      volumes:
+      - name: cache-volume
+        emptyDir: {}
