@@ -1,7 +1,7 @@
 #!/bin/bash
 
-WORK_DIR=/home/demoyuw
-LOGFILE=$WORK_DIR/log/rancher_install.log
+WORK_DIR=/home/$USER
+LOGFILE=$WORK_DIR/log/docker_install.log
 mkdir $WORK_DIR/log
 touch $LOGFILE
 

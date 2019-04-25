@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WORK_DIR=/home/demoyuw
+WORK_DIR=/home/$USER
 LOGFILE=$WORK_DIR/log/rancher_install.log
 mkdir $WORK_DIR/log
 touch $LOGFILE
