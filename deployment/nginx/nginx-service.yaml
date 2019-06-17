@@ -13,5 +13,3 @@ spec:
       protocol: TCP
       port: 80
       nodePort: 30060
-#  externalIPs:
-#  - 10.50.1.60
