@@ -1,6 +1,4 @@
-# k8s
-
-Kubernetes 微服務架構設計班
+# Kubernetes 微服務架構設計班
 
 課程所提供VM規格為 GCP VM，規格為 n1-standard-1 (1 個 vCPU，3.75 GB 記憶體) 10G disk，防火牆支援HTTP and HTTPS，還在VPC的防火牆規則開了tcp:2379、tcp:10250、tcp:6443 for Kubernetes。
 
