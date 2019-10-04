@@ -1,12 +1,12 @@
-iapiVersion: extensions/v1beta1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: test-ingress
+  name: nginx-ingress
 spec:
   rules:
+  # host: 10.50.1.96.iii.org.tw
   - http:
       paths:
-      - path: /testpath
-        backend:
-          serviceName: test
+      - backend:
+          serviceName: nginx-service
           servicePort: 80
