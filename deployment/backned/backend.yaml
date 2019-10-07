@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: backend
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: backend
@@ -25,8 +26,8 @@ spec:
             memory: "64Mi"
             cpu: "0.1"
           limits:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: "1Gi"
+            cpu: "1"
         ports:
         - containerPort: 3306
           name: mysql
