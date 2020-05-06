@@ -1,6 +1,6 @@
 # 深入淺出Container, Kubernetes與GKE
 
-課程所提供VM規格為 GCP VM，規格為 n1-standard-1 (1 個 vCPU，3.75 GB 記憶體) 10G disk，防火牆支援HTTP and HTTPS，還在VPC的防火牆規則開了3個port for kubernetes。
+課程所提供VM規格為 GCP Ubunt16.04LTS VM，規格為 n1-standard-1 (1 個 vCPU，3.75 GB 記憶體) 10G disk，防火牆支援HTTP and HTTPS，還在VPC的防火牆規則開了3個port for kubernetes。
 
 Etcd port, tcp:2379  
 Kubelet port, tcp:10250  
