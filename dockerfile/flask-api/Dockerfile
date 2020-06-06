@@ -1,8 +1,6 @@
-FROM python:2.7
+FROM python:3
 LABEL version="0.1"
 WORKDIR /usr/src/app
-COPY . /usr/src/app/
+COPY . .
 RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
-RUN mkdir test
-VOLUME ["test"] 
 CMD [ "python", "api.py"]
