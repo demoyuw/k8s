@@ -12,6 +12,8 @@ services:
   db:
     container_name: postgresql
     image: postgres
+    environment:
+      - POSTGRES_PASSWORD=devops
     ports:
       - "5432:5432"
     volumes:
