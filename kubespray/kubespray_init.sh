@@ -3,16 +3,16 @@
 LOGFILE=$HOME/ubuntu16_install_kubespray.log
 touch $LOGFILE
 
-git clone https://github.com/kubernetes-sigs/kubespray.git
-chmod 755 -R kubespray
-
 sudo apt-get update -y && sudo apt-get upgrade -y
 # python
 sudo apt-get install libssl-dev python3-pip -y
 
+# get kubespray
+git clone https://github.com/kubernetes-sigs/kubespray.git
+chmod 755 -R kubespray
 cd kubespray
 
-# ansible
+# 安裝ansible
 sudo pip3 install -r requirements.txt
 
 # copy sample
@@ -26,7 +26,7 @@ CONFIG_FILE=inventory/mycluster/hosts.yaml python3 contrib/inventory_builder/inv
 cat inventory/mycluster/group_vars/all/all.yml
 cat inventory/mycluster/group_vars/k8s-cluster/k8s-cluster.yml
 
-# ansible deploy
+# deploy k8s cluster
 ansible-playbook -i inventory/mycluster/hosts.yaml  --become --become-user=root cluster.yml
 
 # get admin config
