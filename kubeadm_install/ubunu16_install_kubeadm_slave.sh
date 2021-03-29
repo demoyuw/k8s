@@ -10,7 +10,7 @@ if [ $EUID -ne 0 ] ; then
    exit 1
 fi
 
-LOGFILE=$HOME/ubuntu16installk8s_master.log
+LOGFILE=$HOME/ubuntu16_install_kubeadm_slave.log
 touch $LOGFILE
 
 sed -i "s,tw.,,g" /etc/apt/sources.list >> $LOGFILE
