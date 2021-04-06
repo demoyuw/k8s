@@ -1,4 +1,4 @@
-# 深入淺出Container, Kubernetes and GKE
+# 深入淺出Container, Kubernetes and GKE: docker篇
 
 ## Linux or Mac ssh 登入 GCP VM, 複製 k8s/ssh/k8s.key至筆電端
 ### 移動ssh key至 .ssh資料夾內 p.4
