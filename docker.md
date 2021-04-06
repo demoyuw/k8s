@@ -39,11 +39,26 @@ ssh -i ~/.ssh/k8s.key demoyuw@xxx.xxx.xxx.xxx
 
 ## Docker command 操作
 ### 建立docker image p.29
+```
+docker build {Dockerfile 所在位置} --tag {image_name}
+```
 #### build docker nginx
 ```
 cd k8s/dockerfile/nginx
 docker build . --tag demoyuw/nginx:v0.1
 cd ~/
+```
+#### build python flask
+```
+docker build dockerfile/flask-api/ --tag demoyuw/flask-api
+```
+#### build ubuntu
+```
+docker build dockerfile/ubuntu16/ --tag demoyuw/ubuntu16
+```
+#### build java tomcat
+```
+docker build dockerfile/tomcat/ --tag demoyuw/java-tomcat 
 ```
 ### 檢視Dockcer image 清單
 ```
@@ -71,7 +86,6 @@ docker save -o {output_file.tgz} {docker_image_id or image_name}
 docker save -o demoyuw_nginx.tgz demoyuw/nginx:v0.1
 docker save -o 41eb0da21074.tgz 41eb0da21074
 ```
-
 ### docker image 匯入成單一檔案
 ```
 docker load -i {output_file.tgz}
@@ -81,7 +95,6 @@ docker load -i {output_file.tgz}
 docker save -i demoyuw_nginx.tgz
 docker save -i 41eb0da21074.tgz
 ```
-
 ### 登入docker hub p.32
 ```
 docker login
@@ -91,19 +104,41 @@ docker login
 docker push demoyuw/nginx:v0.1
 ```
 ### 抓取docker image from docker hub
+#### 抓取私有帳號或組織的container image
 ```
-docker push demoyuw/nginx:v0.1
+docker pull demoyuw/nginx:v0.1
 ```
-
+#### 抓取官方container image 
+```
+docker pull ubuntu:18.04
+```
 ### docker container列表 p.33
 ```
 docker ps -a
 ```
 ### 建立docker container 
 #### -p: port, -v: Volume
+### 建立nginx container
 ```
 docker run -itd -p 80:80 --name nginx demoyuw/nginx:v0.1
 ```
+### 建立python flask Container
+```
+docker run -itd -p 30060:10009 --name python-flask demoyuw/flask-api
+```
+#### 驗證 python-flask
+```
+http://{VM1 外部IP}:30060
+```
+### 建立 java tomcat container
+```
+docker run -v /home/demoyuw/k8s/dockerfile/tomcat/war:/apache-tomcat-7.0.82/webapps -p 80:8080 -itd --name java-tomcat demoyuw/java-tomcat
+```
+#### 驗證 java tomcat
+```
+http://{VM1 外部IP}/jenkins/
+```
+
 ### 停止docker container p.35
 ```
 docker stop {container_id or container_name}
@@ -112,6 +147,7 @@ docker stop {container_id or container_name}
 ```
 docker stop nginx
 docker stop acce9cce7388
+docker stop java-tomcat
 ```
 ### 刪除 docker container
 ``` 
@@ -121,6 +157,7 @@ docker rm {container_id or container_name}
 ```
 docker rm nginx
 docker rm acce9cce7388
+docker rm java-tomcat
 ```
 
 ### 至docker container 內執行 p.37
