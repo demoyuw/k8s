@@ -12,7 +12,7 @@ spec:
     - name: apiport
       protocol: TCP
       port: 10009
-#      targetPort: 10009
-#      nodePort: 30060
+      targetPort: 10009
+      nodePort: 30061
 #  externalIPs:
 #  - 10.50.1.60
