@@ -86,15 +86,15 @@ kubectl apply -f ~/k8s/deployment/nginx/nginx-deploy.yaml
 ```
 ### 檢查deployment部署情況
 ```
-kubectl get deployment
+kubectl get all
 ```
 
 ## 使用VM1 kubectl backend deployment
-### 部署nginx deployment
+### 部署backend deployment
 ```
-kubectl apply -f ~/k8s/deployment/backned/backend.yaml
+kubectl apply -f ~/k8s/deployment/backend/backend.yaml
 ```
 ### 檢查deployment部署情況
 ```
-kubectl get deployment
+kubectl get all
 ```
