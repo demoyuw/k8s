@@ -4,9 +4,10 @@ metadata:
   name: nginx-ingress
 spec:
   rules:
-  # host: 10.50.1.96.iii.org.tw
-  - http:
+  - host: nginx.34.105.24.28.xip.io
+    http:
       paths:
-      - backend:
+      - path: /nginx
+        backend:
           serviceName: nginx-service
           servicePort: 80
