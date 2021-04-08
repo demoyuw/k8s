@@ -78,6 +78,19 @@ vim config
 ```
 kubectl version
 ```
+### 顯示Kube config 所有cluster資訊 p.93
+```
+kubectl config get-contexts 
+```
+### 選擇使用指定的cluster
+```
+kubectl config use-context {cluster name}
+kubectl config use-context rancher-k8s2-k8s-20210407-102
+```
+### 檢查Kubeconfig cluste資訊
+```
+kubectl config get-contexts 
+```
 
 ## 使用VM1 kubectl 部署nginx deployment
 ### 部署nginx deployment
@@ -98,3 +111,140 @@ kubectl apply -f ~/k8s/deployment/backend/backend.yaml
 ```
 kubectl get all
 ```
+## 除錯
+### kubectl exec
+```
+kubectl exec -it {pod_name} -- /bin/bash
+kubectl exec -it {pod_name} -c {container_name} -- /bin/bash
+```
+#### 範例
+```
+kubectl exec -it nginx-deployment-6b474476c4-dx2zl -- /bin/bash
+kubectl exec -it backend-68ffbfb9cd-vjxk5 -c python -- /bin/bash
+kubectl exec -it backend-68ffbfb9cd-vjxk5 -c mysql -- /bin/bash
+```
+##### 退出
+```
+exit
+```
+### kubectl logs p.110
+```
+kubectl logs {pod_name}
+kubectl logs {pod_name} -c {container_name}
+```
+#### 範例
+```
+kubectl logs nginx-deployment-6b474476c4-dx2zl
+kubectl logs backend-68ffbfb9cd-vjxk5 -c python
+kubectl logs backend-68ffbfb9cd-vjxk5 -c mysql
+```
+
+### kubectl describe p.112, p114
+```
+kubectl describe pod {pod_name}
+kubectl describe deployment {deployment_name}
+kubectl describe rs {rs_name}
+```
+#### 範例
+```
+kubectl describe pod backend-68ffbfb9cd-vjxk5
+kubectl describe deployment backend
+kubectl describe rs backend-68ffbfb9cd
+```
+
+### 動態調整資源
+```
+kubectl edit deploy nginx-deployment --record=true
+  replicas: 2
+```
+### 查詢deployment 版本紀錄
+```
+kubectl rollout history deployment nginx-deployment
+```
+### 回朔deployment到上一版本
+```
+kubectl rollout undo deployment nginx-deployment
+```
+
+### 部署DaemonSet p.118
+```
+kubectl apply -f ~/k8s/daemonset/daemonset.yaml
+```
+#### 檢查DaemonSet 
+```
+kubectl get daemonset --all-namespaces
+kubectl describe po fluentd-elasticsearch-6gg5f -n kube-system
+```
+#### 檢查DaemonSet container 與log資訊
+```
+kubectl get pod -o wide --all-namespaces | grep fluentd-elasticsearc
+kubectl exec -it fluentd-elasticsearch-6gg5f -n kube-system -- /bin/bash
+kubectl exec -it fluentd-elasticsearch-6gg5f -n kube-system -- ls /var/lib/docker/containers
+```
+
+### 檢視節點資訊(VM) p.121
+```
+kubectl get nodes -o wide
+```
+#### 顯示節點上所有標籤
+```
+kubectl get nodes --show-labels
+```
+#### 節點上新增標籤 hardware=high-cpu p.122
+```
+kubectl label node {node name} hardware=high-cpu
+```
+#### 節點上移除標籤 hardware=high-cpu
+```
+kubectl label node {node name} hardware-
+```
+
+## kubenetet service
+### 部署nginx service yaml
+```
+kubectl apply -f ~/k8s/deployment/nginx/nginx-service.yaml
+kubectl apply -f ~/k8s/deployment/backend/python-service.yaml
+```
+#### 檢視部署的nginx service
+```
+kubectl get service
+```
+### 刪除deployment
+```
+kubectl delete deploy backend
+```
+### k8s selector p.132
+```
+kubectl get all --selector="app=nginx"
+```
+
+### k8s DNS p.133
+```
+kubectl get services kube-dns --namespace=kube-system
+```
+#### 驗證
+```
+kubectl run curl --image=radial/busyboxplus:curl -i --tty
+nslookup nginx-service
+```
+
+### 顯示系統端資訊
+```
+kubectl get all --namespace=kube-system
+```
+
+## k8s ingress
+### 部署ingress
+```
+kubectl apply -f k8s/ingrees/ingress.yaml
+```
+#### 檢查ingress狀態
+```
+kubectl get ingress
+```
+#### 檢查ingress狀態
+```
+curl http://nginx.{VM2 外部IP}.xip.io/nginx
+```
+
+## k8s Volume
