@@ -246,5 +246,3 @@ kubectl get ingress
 ```
 curl http://nginx.{VM2 外部IP}.xip.io/nginx
 ```
-
-## k8s Volume
