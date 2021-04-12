@@ -14,4 +14,4 @@ Windows 用戶製作自己的ssh key 並上傳到GCP可參考：https://www.tech
 課程實作上有相關問題，也可以到Issues上發單詢問。
 
 ## 使用kubeadmin 部署kubernetes 影片
-[使用kubeadmin 部署kubernetes 影片](https://youtu.be/2ht4O4BIr28)
+[使用kubeadmin 部署kubernetes 影片](https://youtu.be/JjOekmoacBg)
