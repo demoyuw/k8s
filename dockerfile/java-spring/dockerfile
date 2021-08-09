@@ -1,0 +1,10 @@
+FROM gradle:jdk8 as build-stage
+COPY --chown=gradle:gradle . /home/gradle/src
+WORKDIR /home/gradle/src
+RUN ls -al
+RUN gradle build
+
+FROM openjdk:8-jdk-alpine
+RUN ls -al
+COPY --from=build-stage /home/gradle/src/build/libs/\*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
