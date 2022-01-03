@@ -12,5 +12,5 @@ add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu
    $(lsb_release -cs) \
    stable" &>> $LOGFILE
 apt-get update -y &>> $LOGFILE 
-apt-get install docker-ce=17.03.2~ce-0~ubuntu-xenial -y &>> $LOGFILE
+apt-get install docker-ce -y &>> $LOGFILE
 usermod -aG docker demoyuw &>> $LOGFILE
