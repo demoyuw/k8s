@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: python-service
+  labels: 
+    app: python
+spec:
+  type: NodePort
+  selector:
+    app: python
+  ports:
+    - name: apiport
+      protocol: TCP
+      port: 10009
+#      targetPort: 10009
+#      nodePort: 30060
+#  externalIPs:
+#  - 10.50.1.60
