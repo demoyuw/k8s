@@ -12,3 +12,4 @@ spec:
     - name: http
       protocol: TCP
       port: 80
+      nodePort: 30060
