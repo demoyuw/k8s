@@ -1,6 +1,6 @@
 # 微服務Kubernetes與Docker開發實務班
 
-課程所提供VM規格為 GCP Ubunt20.04LTS VM，規格為 n1-standard-1 (2 個 vCPU，4 GB 記憶體) 10G disk，防火牆支援HTTP and HTTPS，還在VPC的防火牆規則開了3個port for kubernetes。
+課程所提供VM規格為 GCP Ubunt20.04LTS VM，規格為 n1-standard-1 (2 個 vCPU，4 GB 記憶體) 20G disk，防火牆支援HTTP and HTTPS，還在VPC的防火牆規則開了3個port for kubernetes。
 
 Etcd port, tcp:2379  
 Kubelet port, tcp:10250  
