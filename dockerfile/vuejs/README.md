@@ -1,88 +1,78 @@
-# Jenesius Vue Modal
+# Vuejs & TailwindCSS Portfolio - With Dark Mode
 
-Jenesius vue modal is simple library for **Vue 3** only.[Web](https://modal.jenesius.com/)
+A simple portfolio starter theme built with Vue.js v3 and Tailwind CSS v3.
 
-![](https://img.shields.io/github/stars/Jenesius/vue-modal)
-![Greet everyone](https://github.com/Jenesius/vue-modal/actions/workflows/node.js.yml/badge.svg)
-![](https://img.shields.io/npm/l/jenesius-vue-modal)
-![](https://img.shields.io/github/package-json/dependency-version/jenesius/vue-modal/vue)
+![Vuejs-TailwindCSS-Portfolio](https://user-images.githubusercontent.com/16396664/140909796-815239e4-a986-46ad-bbd0-4b166127bbb8.JPG)
 
-### Installation
+## Demo URL
 
-```markdown
-npm i jenesius-vue-modal
+[https://vuejs-tailwindcss-portfolio.netlify.com](https://vuejs-tailwindcss-portfolio.netlify.com)
+
+## Features
+
+-   Simple and responsive design
+-   [Vue.js v3](https://vuejs.org) with [Vue Router](https://router.vuejs.org)
+-   [Tailwind CSS v3](https://tailwindcss.com)
+-   Theme Switcher with Dark Mode
+-   Composition API
+-   Vue transitions
+-   Reusable Components
+-   Auto Counter
+-   Projects filter by category
+-   Projects filter by search
+-   Projects carousel
+-   Vue.js smooth scroll
+-   Dynamic forms
+-   Scroll to top button
+-   Download file button
+
+### To Contribute to this project, read the [Contribution Guidlines](https://github.com/realstoman/vuejs-tailwindcss-portfolio/blob/main/CONTRIBUTING.md)
+
+## Setup
+
+1. Make sure you have Node JS installed. If you don't have it:
+
+-   [Download it from nodejs.org](https://nodejs.org)
+-   [Install it using NVM ](https://github.com/nvm-sh/nvm)
+-   If you're on Mac, Homebrew is a good option too:
+
+```
+brew install node
 ```
 
-----
+2. Clone the repo:
 
-For add modals in your project you need to put the modal's container in the App component:
-
-`App.vue`
-```vue
-<template>
-    <widget-container-modal />
-</template>
-<script>
-    import {container} from "jenesius-vue-modal";
-    
-    export default {
-        components: {WidgetContainerModal: container},
-        name: "App"
-    }
-</script>
+```
+git clone https://github.com/realstoman/vuejs-tailwindcss-portfolio.git
 ```
 
-## OpenModal
+3. Open the project folder:
 
-```js
-    import {openModal} from "jenesius-vue-modal";
-
-    openModal(VueComponent, props);
 ```
-or
-```js
-    import {useModal} from "jenesius-vue-modal";
-
-    export default{
-        setup(){
-            const {openModal} = useModal();
-            openModal(VueComponent, props);
-        }
-    }
+cd vuejs-tailwindcss-portfolio
 ```
 
-## Methods
+4. Install packages and dependencies:
 
-| Function name | Description                    |
-| ------------- | ------------------------------ |
-| `openModal(VueComponent, props)`      | Close any other modals and then open provided modal |
-| `closeModal()`   | Close all modals |
-| `pushModal(VueComponent, props)` | Add on top modal component |
-| `popModal()` | Close the last modal component |
-
-## Example VueModalComponent
-
-`WidgeTestModal.vue`
-```vue 
-    <template>
-        <p>{{title}}</p>
-    </template>
-    <script>
-        export default {
-            props: {
-                title: String
-            }
-        }
-    </script>
 ```
-To show this component
-```js
-    import {useModal} from "jenesius-vue-modal"
-    import WidgeTestModal from "WidgeTestModal.vue";
-
-    const {openModal} = useModal();
-
-    openModal(WidgeTestModal, {
-        title: "Hello World!"
-    });
+npm install
 ```
+
+5. Start a local dev server at `http://localhost:8080`:
+
+```
+npm run serve
+```
+
+## Notes
+
+-   Always run `npm install` after pulling new changes
+-   I'll be constantly updating this repo as I'll be adding more sections to it, so please always check the projects section of this repo to see what tasks are under todo and in progress
+-   Coming Soon [I'll be doing a screencast](https://www.youtube.com/realstoman). Soon I'll be uploading a video to my YouTube channel where I'll be going through the process of creating this portoflio
+-   Illustrations from [unDraw](https://undraw.co) and [Freepik](https://freepik.com)
+-   Images from [Unsplash](https://unsplash.com)
+-   Feel free to use it as your own portfolio
+-   Contributions are welcome
+
+### License
+[MIT](https://github.com/realstoman/vuejs-tailwindcss-portfolio/blob/main/LICENSE)
