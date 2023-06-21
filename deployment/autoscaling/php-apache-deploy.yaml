@@ -21,3 +21,7 @@ spec:
         image: k8s.gcr.io/hpa-example
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "0.1"

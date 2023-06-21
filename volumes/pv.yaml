@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: first-pv
+spec:
+  storageClassName: "first-storage-class"
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  claimRef:
+    namespace: default
+    name: first-pvc
+  csi:
+    driver: pd.csi.storage.gke.io
+    volumeHandle: projects/backend15-pj2/zones/us-central1-a/disks/my-first-disk
+    fsType: ext4
