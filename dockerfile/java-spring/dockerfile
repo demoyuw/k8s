@@ -1,4 +1,4 @@
-FROM gradle:jdk8 as build-stage
+FROM gradle:7.6.0-jdk8 as build-stage
 WORKDIR /home/gradle/src
 COPY --chown=gradle:gradle . .
 RUN gradle build
