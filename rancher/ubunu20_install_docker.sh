@@ -2,7 +2,7 @@
 
 WORK_DIR=/home/demoyuw
 LOGFILE=$WORK_DIR/log/docker_install.log
-mkdir $WORK_DIR/log
+mkdir -p $WORK_DIR/log
 touch $LOGFILE
 
 apt-get update -y &>> $LOGFILE

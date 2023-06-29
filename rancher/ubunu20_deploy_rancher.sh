@@ -2,7 +2,7 @@
 
 WORK_DIR=/home/demoyuw
 LOGFILE=$WORK_DIR/log/rancher_install.log
-mkdir $WORK_DIR/log
+mkdir -p $WORK_DIR/log
 touch $LOGFILE
 
 apt-get update -y &>> $LOGFILE
@@ -15,6 +15,6 @@ apt-get update -y &>> $LOGFILE
 apt-get install docker-ce -y &>> $LOGFILE
 usermod -aG docker demoyuw &>> $LOGFILE
 
-mkdir $WORK_DIR/rancher &>> $LOGFILE
+mkdir -p $WORK_DIR/rancher &>> $LOGFILE
 chmod 755 $WORK_DIR/rancher &>> $LOGFILE
 docker run -d --privileged --restart=unless-stopped -p 80:80 -p 443:443 -v $WORK_DIR/rancher:/var/lib/rancher rancher/rancher:stable &>> $LOGFILE
