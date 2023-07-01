@@ -1,6 +1,6 @@
 # 微服務Kubernetes與Docker開發實務班
 
-課程所提供VM規格為 GCP Ubunt20.04LTS VM，規格為 n1-standard-1 (2 個 vCPU，4 GB 記憶體) 20G disk，防火牆支援HTTP and HTTPS，還在VPC的防火牆規則開了3個port for kubernetes。
+課程所提供VM規格為 GCP Ubunt20.04LTS VM，規格為 e2-medium (2 個 vCPU，4 GB 記憶體) 20G disk，防火牆支援HTTP and HTTPS，還在VPC的防火牆規則開了3個port for kubernetes。
 
 Etcd port, tcp:2379  
 Kubelet port, tcp:10250  
@@ -17,4 +17,11 @@ Windows 用戶製作自己的ssh key 並上傳到GCP可參考：https://www.tech
 [使用kubeadmin 部署kubernetes 影片](https://youtu.be/JjOekmoacBg)
 ## 使用kubespray 部署kubernetes 影片
 [使用Kubespray 部署kubernetes 影片](https://youtu.be/n0HAqlphXMQ)
+
+## Goolge Kubernetes Engine (GKE)
+### 部署GKE及使用GKE Load Balancer
+[部署ＧKE及使用GKE load balancer](https://youtu.be/wwZrYZ5Tqs0)
+### GKE使用雲端硬碟及Horizontal Pod Autoscaling (hpa)
+[ＧKE使用雲端硬碟及Horizontal Pod Autoscaling](https://youtu.be/CINobo_CQ1U)
+
 
