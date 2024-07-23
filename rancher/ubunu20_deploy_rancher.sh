@@ -14,6 +14,7 @@ add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu
 apt-get update -y &>> $LOGFILE 
 apt-get install docker-ce -y &>> $LOGFILE
 usermod -aG docker demoyuw &>> $LOGFILE
+newgrp docker &>> $LOGFILE
 
 mkdir -p $WORK_DIR/rancher &>> $LOGFILE
 chmod 755 $WORK_DIR/rancher &>> $LOGFILE
