@@ -13,5 +13,5 @@ spec:
     name: first-pvc
   csi:
     driver: pd.csi.storage.gke.io
-    volumeHandle: projects/backend11-pj3/zones/us-central1-c/disks/my-first-disk
+    volumeHandle: projects/total-triumph-349505/zones/us-central1-a/disks/my-first-disk
     fsType: ext4

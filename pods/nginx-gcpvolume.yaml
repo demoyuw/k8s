@@ -15,4 +15,4 @@ spec:
   volumes:
   - name: gcp-volume
     persistentVolumeClaim:
-      claimName: first-pvc
+      claimName: my-readonly-pvc
