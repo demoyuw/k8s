@@ -1,11 +1,25 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: strip-prefix
+  namespace: default
+spec:
+  stripPrefix:
+    prefixes:
+      - /nginx
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx-ingress
+  namespace: default
+  annotations:
+    # 格式：<namespace>-<middleware_name>@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: default-strip-prefix@kubernetescrd
 spec:
   ingressClassName: traefik
   rules:
-  - host: nginx.34.105.24.28.nip.io
+  - host: nginx.136.67.3.154.nip.io
     http:
       paths:
       - path: /nginx
