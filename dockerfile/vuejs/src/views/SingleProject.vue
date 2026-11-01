@@ -1,4 +1,10 @@
 <script>
+import imgUiProject1 from '@/assets/images/ui-project-1.jpg';
+import imgWebProject2 from '@/assets/images/web-project-2.jpg';
+import imgMobileProject2 from '@/assets/images/mobile-project-2.jpg';
+import imgMobileProject1 from '@/assets/images/mobile-project-1.jpg';
+import imgWebProject1 from '@/assets/images/web-project-1.jpg';
+import imgUiProject2 from '@/assets/images/ui-project-2.jpg';
 import feather from 'feather-icons';
 import ProjectHeader from '../components/projects/ProjectHeader.vue';
 import ProjectGallery from '../components/projects/ProjectGallery.vue';
@@ -24,17 +30,17 @@ export default {
 				{
 					id: 1,
 					title: 'Kabul Project Management UI',
-					img: require('@/assets/images/ui-project-1.jpg'),
+					img: imgUiProject1,
 				},
 				{
 					id: 2,
 					title: 'Kabul Project Management UI',
-					img: require('@/assets/images/web-project-2.jpg'),
+					img: imgWebProject2,
 				},
 				{
 					id: 3,
 					title: 'Kabul Project Management UI',
-					img: require('@/assets/images/mobile-project-2.jpg'),
+					img: imgMobileProject2,
 				},
 			],
 			projectInfo: {
@@ -140,22 +146,22 @@ export default {
 					{
 						id: 1,
 						title: 'Mobile UI',
-						img: require('@/assets/images/mobile-project-1.jpg'),
+						img: imgMobileProject1,
 					},
 					{
 						id: 2,
 						title: 'Web Application',
-						img: require('@/assets/images/web-project-1.jpg'),
+						img: imgWebProject1,
 					},
 					{
 						id: 3,
 						title: 'UI Design',
-						img: require('@/assets/images/ui-project-2.jpg'),
+						img: imgUiProject2,
 					},
 					{
 						id: 4,
 						title: 'Kabul Mobile App UI',
-						img: require('@/assets/images/mobile-project-2.jpg'),
+						img: imgMobileProject2,
 					},
 				],
 			},
