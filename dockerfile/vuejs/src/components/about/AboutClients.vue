@@ -1,4 +1,12 @@
 <script>
+import imgAmazonGray from '@/assets/images/brands/amazon_gray.png';
+import imgSonyGray from '@/assets/images/brands/sony_gray.png';
+import imgAdidasGray from '@/assets/images/brands/adidas_gray.png';
+import imgFilaGray from '@/assets/images/brands/fila_gray.png';
+import imgNbGray from '@/assets/images/brands/nb_gray.png';
+import imgSamsungGray from '@/assets/images/brands/samsung_gray.png';
+import imgCanonGray from '@/assets/images/brands/canon_gray.png';
+import imgPumaGray from '@/assets/images/brands/puma_gray.png';
 import AboutClientSingle from './AboutClientSingle.vue';
 
 export default {
@@ -12,42 +20,42 @@ export default {
 				{
 					id: 1,
 					title: 'Amazon',
-					img: require('@/assets/images/brands/amazon_gray.png'),
+					img: imgAmazonGray,
 				},
 				{
 					id: 2,
 					title: 'Sony',
-					img: require('@/assets/images/brands/sony_gray.png'),
+					img: imgSonyGray,
 				},
 				{
 					id: 3,
 					title: 'Adidas',
-					img: require('@/assets/images/brands/adidas_gray.png'),
+					img: imgAdidasGray,
 				},
 				{
 					id: 4,
 					title: 'FILA',
-					img: require('@/assets/images/brands/fila_gray.png'),
+					img: imgFilaGray,
 				},
 				{
 					id: 5,
 					title: 'NB',
-					img: require('@/assets/images/brands/nb_gray.png'),
+					img: imgNbGray,
 				},
 				{
 					id: 6,
 					title: 'SAMSUNG',
-					img: require('@/assets/images/brands/samsung_gray.png'),
+					img: imgSamsungGray,
 				},
 				{
 					id: 7,
 					title: 'CANON',
-					img: require('@/assets/images/brands/canon_gray.png'),
+					img: imgCanonGray,
 				},
 				{
 					id: 7,
 					title: 'PUMA',
-					img: require('@/assets/images/brands/puma_gray.png'),
+					img: imgPumaGray,
 				},
 			],
 		};

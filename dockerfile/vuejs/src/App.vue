@@ -2,11 +2,13 @@
 import feather from 'feather-icons';
 import AppHeader from './components/shared/AppHeader';
 import AppFooter from './components/shared/AppFooter';
+import BackToTop from './components/shared/BackToTop.vue';
 
 export default {
 	components: {
 		AppHeader,
 		AppFooter,
+		BackToTop,
 	},
 	data: () => {
 		return {
@@ -33,14 +35,7 @@ export default {
 		</transition>
 
 		<!-- Scroll to top -->
-		<back-to-top
-			visibleoffset="500"
-			right="30px"
-			bottom="20px"
-			class="shadow-lg"
-		>
-			<i data-feather="chevron-up"></i>
-		</back-to-top>
+		<BackToTop />
 
 		<!-- App footer -->
 		<AppFooter />
